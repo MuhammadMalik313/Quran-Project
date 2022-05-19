@@ -73,22 +73,26 @@ class _PlaylistState extends State<Playlist> {
                           Widget cancelButton = FlatButton(
                             child: Text("Cancel"),
                             onPressed: () {
-                             Navigator.pop(context,
-              MaterialPageRoute(builder: (context) => Playlist()));
+                              Navigator.pop(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Playlist()));
                             },
                           );
                           Widget continueButton = FlatButton(
-                            child: Text("Continue"),
+                            child: Text("Yes"),
                             onPressed: () {
-                               deletePlaylist(data.name);
-                               Navigator.pop(context,
-              MaterialPageRoute(builder: (context) => Playlist()));
+                              deletePlaylist(data.name);
+                              Navigator.pop(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Playlist()));
                             },
                           );
                           // set up the AlertDialog
                           AlertDialog alert = AlertDialog(
                             // title: Text("AlertDialog"),
-                            content: Text("Do you want to delete"),
+                            content: Text("Do you want to delete?"),
                             actions: [
                               cancelButton,
                               continueButton,
@@ -111,15 +115,14 @@ class _PlaylistState extends State<Playlist> {
                                       child: Text("Remove"),
                                       onTap: () {
                                         Future.delayed(
-                                            const Duration(seconds: 1),
+                                            const Duration(seconds: 0),
                                             () => showAlertDialog(context));
                                         // deletePlaylist(data.name);
 
                                         // print("object");
 
                                         showAlertDialog(context);
-                                        Navigator.pop(context, false); 
-
+                                        Navigator.pop(context, false);
                                       },
                                       value: 1,
                                     ),
@@ -127,15 +130,6 @@ class _PlaylistState extends State<Playlist> {
                                       child: Text("Edit"),
                                       onTap: () {
                                         print("Clicked");
-
-                                        // Navigator.push(
-                                        //   context,
-                                        //   MaterialPageRoute(
-                                        //     builder: (context) => PlaylistSong(
-                                        //       playlistName: data.name,
-                                        //     ),
-                                        //   ),
-                                        // );
                                       },
                                       value: 2,
                                     ),
