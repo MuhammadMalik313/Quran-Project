@@ -45,7 +45,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "THE HOLY QURAN",
-        theme: ThemeData(primaryColor: Color.fromARGB(255, 38, 94, 189)),
-        home: AudioServiceWidget(child: SplashScreen1()));
+       
+       theme: ThemeData(brightness: Brightness.dark),
+        home:  SplashScreen1());
   }
 }

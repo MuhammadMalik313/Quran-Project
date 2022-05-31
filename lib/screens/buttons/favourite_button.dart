@@ -10,7 +10,7 @@ class FavouritesButton extends StatelessWidget {
     return  ElevatedButton(
               style: ElevatedButton.styleFrom(
                   fixedSize: const Size(250, 50),
-                  primary: Color.fromARGB(255, 44, 104, 126),
+                  primary:  Color.fromARGB(203, 11, 11, 11),
                   onPrimary: Colors.white,
                   elevation: 5,
                   shape: RoundedRectangleBorder(
@@ -24,7 +24,6 @@ class FavouritesButton extends StatelessWidget {
                 style: TextStyle(fontSize: 23, fontFamily: "font1"),
               ),
             ) ;
-    //  return IconButton(onPressed: (){  Navigator.push(context, SizeTransition3(SettingsPage()));}, icon: Icon(Icons.settings,size: 30,));
   }
 }
 class SizeTransition3 extends PageRouteBuilder {

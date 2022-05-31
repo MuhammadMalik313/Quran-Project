@@ -21,7 +21,7 @@ class _AudioNameState extends State<AudioName> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           fixedSize: const Size(250, 50),
-          primary: Color.fromARGB(255, 201, 90, 184),
+          primary:  Color.fromARGB(203, 11, 11, 11),
           elevation: 5,
           onPrimary: Colors.white,
           shape:
@@ -52,7 +52,7 @@ class SlideAnimation4 extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-      
+      backgroundColor: Colors.black,
           title: Text("AUDIO INDEX"),
           centerTitle: true,
           brightness: Brightness.dark,
@@ -101,7 +101,7 @@ class SlideAnimation4 extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: _w / 20),
                       height: _w / 5,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        // color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         boxShadow: [
                           BoxShadow(

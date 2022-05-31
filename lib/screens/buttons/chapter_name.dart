@@ -16,7 +16,7 @@ class _ChapterButtonState extends State<ChapterButton> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           fixedSize: const Size(250, 50),
-          primary: Colors.cyan,
+          primary: Color.fromARGB(203, 11, 11, 11),
           elevation: 5,
           onPrimary: Colors.white,
           shape:
@@ -41,6 +41,7 @@ class SlideAnimation1 extends StatelessWidget {
     double _w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         actions: [
           IconButton(
               onPressed: () {
@@ -99,7 +100,7 @@ class SlideAnimation1 extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: _w / 20),
                     height: _w / 5,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      // color: Colors.white,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -182,7 +183,7 @@ class Mysearch extends SearchDelegate {
         : ListView.builder(
             itemCount: listItems.length,
             itemBuilder: (context, index) {
-              int i;
+              
 
               return Padding(
                   padding: const EdgeInsets.only(left: 15.00, right: 15.00),
@@ -197,13 +198,8 @@ class Mysearch extends SearchDelegate {
                           fontFamily: "font3",
                         ),
                       ),
-                      //  subtitle: Text(quran.getSurahNameEnglish()),
-                      // trailing: Text(
-                      //   quran.getSurahNameArabic(index),
-                      //   style: TextStyle(
-                      //       fontSize: 22, fontWeight: FontWeight.bold),
-                      // ),
-                      onTap: () {                        var i=quranList.indexOf(listItems[index])+1;
+                     
+                      onTap: () {  var i=quranList.indexOf(listItems[index])+1;
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (ctx) => Qurancontent(surahno: i)));
                       },

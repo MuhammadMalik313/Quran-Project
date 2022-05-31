@@ -16,6 +16,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           centerTitle: true,
           title: Text(
             "SETTINGS",
@@ -25,116 +26,66 @@ class _SettingsPageState extends State<SettingsPage> {
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
-            child: Column(children: [
-              Row(
-                children: [
-                  settingsIcon(settingicon: Icons.playlist_add),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => Playlist())));
-                      },
-                      child: Text(
-                        "Playlist",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "font3",
-                            color: Colors.black),
-                      ))
-                ],
-              ),
-              Row(
-                children: [
-                  settingsIcon(settingicon: Icons.feedback_outlined),
-                  TextButton(
-                      onPressed: () {
-                        
-                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => ContactPage())));
-                      },
-                      child: Text(
-                        "Feedback",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "font3",
-                            color: Colors.black),
-                      ))
-                ],
-              ),
-              Row(
-                children: [
-                  settingsIcon(settingicon: Icons.share),
-                  TextButton(
-                      onPressed: () {
-                        share();
-                      },
-                      child: Text(
-                        "share Qur'an",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "font3",
-                            color: Colors.black),
-                      ))
-                ],
-              ),
-              Row(
-                children: [
-                  settingsIcon(settingicon: Icons.privacy_tip),
-                  TextButton(
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return PolicyDialog(
-                                  mdFileName: "privacy_policy.md");
-                            });
-                      },
-                      child: Text(
-                        "Privacy Policy",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "font3",
-                            color: Colors.black),
-                      ))
+              child: Column(children: [
+            ListTile(
+              leading: Icon(Icons.playlist_add),
+              title: Text("PLaylist"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => Playlist())));
+              },
+            ),
+             ListTile(
+              leading: Icon(Icons.feedback_outlined),
+              title: Text("Feddback"),
+              onTap: () {
+              Navigator.push(
+                             context,
+                              MaterialPageRoute(
+                                  builder: ((context) => ContactPage())));
+              },
+            ),
+             ListTile(
+              leading: Icon( Icons.share),
+              title: Text("Share Quran"),
+              onTap: () {
+               share();
+              },
+            ), ListTile(
+              leading: Icon(Icons.privacy_tip),
+              title: Text("Privacy Policy",),
+              onTap: () {
+                 showDialog(
+                          context: context,
+                          builder: (context) {
+                             return PolicyDialog(
+                                mdFileName: "privacy_policy.md");
+                           });
+              },
+            ), ListTile(
+              leading: Icon(Icons.info),
+              title: Text("About Us"),
+              onTap: () {
+                  showAboutDialog(
+                              context: context,
+                              applicationIcon: Image.asset(
+                                  "assets/quranlogoicon.jpg",
+                                  width: 30,
+                                  height: 30),
+                              applicationName: "Zaynul Quran App",
+                              applicationVersion: "Version 1.0.0\n\nCopyright © 2022-2023",
+                              applicationLegalese:
+                                  "Devoloped by Muhammad Malik ");
+              },
+            ),
+             Padding(
+                  padding: const EdgeInsets.only(top: 370),
+                  child: Text("Version\n  1.0.0",style: TextStyle(color: Colors.grey),),
+                )
+          ])
+             
 
-                ],
               ),
-              Row(
-                children: [
-                  settingsIcon(settingicon: Icons.info),
-                  TextButton(
-                      onPressed: () {
-                        showAboutDialog(
-                            context: context,
-                            applicationIcon: Image.asset(
-                                "assets/quranlogoicon.jpg",
-                                width: 30,
-                                height: 30),
-                            applicationName: "Noble Qur'an App",
-                            applicationVersion: "Version 1.0.0\n\nCopyright © 2022-2023",
-                            applicationLegalese:
-                                "Devoloped by Muhammad Malik ");
-                      },
-                      child: Text(
-                        "About Us",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "font3",
-                            color: Colors.black),
-                      ))
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 370),
-                child: Text("Version\n  1.0.0",style: TextStyle(color: Colors.grey),),
-              )
-            ]),
-
-          ),
         ));
   }
 
@@ -146,7 +97,6 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 }
 
-
 Widget settingsIcon({required settingicon}) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
@@ -156,5 +106,4 @@ Widget settingsIcon({required settingicon}) {
       ],
     ),
   );
-  
 }

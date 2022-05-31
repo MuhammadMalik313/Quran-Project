@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quran/quran.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class JuzuPage extends StatelessWidget {
@@ -12,6 +11,7 @@ class JuzuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
     appBar: AppBar(
+      backgroundColor: Colors.black,
       elevation: 0,
       centerTitle: true,
      title: Text('JUZU $juzno',style: TextStyle(fontSize: 27, fontFamily: "font3"),),

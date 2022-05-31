@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:quraanproject/screens/audio_name.dart';
@@ -69,7 +71,7 @@ class _PlayAudioState extends State<PlayAudio> {
       },
       child: Scaffold(
         appBar: AppBar(
-          
+          backgroundColor: Colors.black,
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
@@ -86,18 +88,22 @@ class _PlayAudioState extends State<PlayAudio> {
           ),
         ),
         body: Container(
-          color: Colors.white,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          
           child: Column(
             children: [
               Stack(
                 children: [
                   Container(
-                    
                     height: _size.height * 0.50,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage("assets/audioimg.jpg"),
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                        "assets/ayath.jpg",
+                      ),
                     )),
                     child: Padding(
                       padding: const EdgeInsets.all(20),
@@ -105,22 +111,25 @@ class _PlayAudioState extends State<PlayAudio> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 60),
+                            padding: const EdgeInsets.only(top: 200, left: 70),
                             child: Text(
                               'Surath ${quran.getSurahName(widget.index)}',
                               style: TextStyle(
-                                  fontSize: 40,
+                                  fontSize: 35,
                                   color: Color.fromARGB(255, 53, 7, 7),
                                   fontFamily: "font6"),
                             ),
                           ),
-                          Text(
-                            'سورة ${quran.getSurahNameArabic(widget.index)}',
-                            style: TextStyle(
-                                fontSize: 40,
-                                color: Color.fromARGB(255, 53, 7, 7),
-                                fontFamily: "font2",
-                                fontWeight: FontWeight.w700),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 80),
+                            child: Text(
+                              'سورة ${quran.getSurahNameArabic(widget.index)}',
+                              style: TextStyle(
+                                  fontSize: 40,
+                                  color: Color.fromARGB(255, 53, 7, 7),
+                                  fontFamily: "font2",
+                                  fontWeight: FontWeight.w700),
+                            ),
                           ),
                         ],
                       ),
@@ -175,7 +184,7 @@ class _PlayAudioState extends State<PlayAudio> {
                                     ),
                                   );
                                 }
-              
+
                                 audioPlayer.stop();
                                 count--;
                                 getAudio();
@@ -185,7 +194,7 @@ class _PlayAudioState extends State<PlayAudio> {
                                       : Icons.pause_circle_filled_outlined,
                                   size: 50,
                                 );
-              
+
                                 // audioPlayer.pause();
                               },
                               icon: Icon(
@@ -244,12 +253,13 @@ class _PlayAudioState extends State<PlayAudio> {
                         IconButton(
                             onPressed: () {
                               audioPlayer.stop();
-              
+
                               Navigator.pushReplacement(
                                 context,
                                 PageRouteBuilder(
-                                  pageBuilder: (context, animation1, animation2) =>
-                                      AddPlaylist(
+                                  pageBuilder:
+                                      (context, animation1, animation2) =>
+                                          AddPlaylist(
                                     songIndex: widget.index,
                                   ),
                                   transitionDuration: Duration(seconds: 0),
@@ -271,6 +281,8 @@ class _PlayAudioState extends State<PlayAudio> {
 
   Widget slider() {
     return Slider.adaptive(
+      activeColor: Colors.black,
+      inactiveColor: Colors.black,
       min: 0.0,
       value: position.inSeconds.toDouble(),
       max: duration.inSeconds.toDouble(),

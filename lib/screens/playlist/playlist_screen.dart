@@ -19,6 +19,7 @@ class _PlaylistState extends State<Playlist> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Text("PLAYLIST"),
           actions: [
             // IconButton(onPressed: () {}, icon: Icon(Icons.add)),
@@ -117,9 +118,7 @@ class _PlaylistState extends State<Playlist> {
                                         Future.delayed(
                                             const Duration(seconds: 0),
                                             () => showAlertDialog(context));
-                                        // deletePlaylist(data.name);
-
-                                        // print("object");
+                                      
 
                                         showAlertDialog(context);
                                         Navigator.pop(context, false);

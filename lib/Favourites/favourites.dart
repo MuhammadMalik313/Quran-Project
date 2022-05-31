@@ -23,6 +23,7 @@ class _FavouriteState extends State<Favourite> {
     double _w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text("FAVOURITES"),
         centerTitle: true,
         brightness: Brightness.dark,
@@ -117,7 +118,7 @@ class _FavouriteState extends State<Favourite> {
     dynamic desiredKey;
     deliveriesMap.forEach((key, value){
         if (value.favNo == favSongId)
-            desiredKey = key;
+           { desiredKey = key;}
     });
     favSongsBox.delete(desiredKey);
   }

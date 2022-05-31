@@ -124,7 +124,6 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
             }
             final snackBar = SnackBar(
               content: Container(
-                
                   child: const Text(
                 ' Added to favourites',
                 style: TextStyle(color: Colors.white),
@@ -134,7 +133,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
           } else {
             deleteItem(widget.favIndex);
             print("Already Exists");
-             final snackBar = SnackBar(
+            final snackBar = SnackBar(
               content: Container(
                   child: const Text(
                 'Removed From Favourites',
@@ -154,11 +153,11 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
         child: isPressed2
             ? Icon(
                 Icons.favorite_border,
-                color: Colors.black.withOpacity(0.6),
+                // color: Colors.black.withOpacity(0.6),
               )
             : Icon(
                 Icons.favorite,
-                color: Colors.pink.withOpacity(1.0),
+                color: Color.fromARGB(255, 228, 8, 78).withOpacity(1.0),
               ),
       ),
     );

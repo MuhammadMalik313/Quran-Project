@@ -15,7 +15,7 @@ class _JuzNameState extends State<JuzNameWidget> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           fixedSize: const Size(250, 50),
-          primary: Color.fromARGB(255, 112, 62, 148),
+           primary:   Color.fromARGB(203, 11, 11, 11),
           onPrimary: Colors.white,
           elevation: 5,
           shape:
@@ -40,6 +40,7 @@ class GridView1 extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         elevation: 0,
           title: Text("JUZ INDEX"),
           centerTitle: true,
@@ -63,10 +64,11 @@ class GridView1 extends StatelessWidget {
                   curve: Curves.fastLinearToSlowEaseIn,
                   child: FadeInAnimation(
                     child: Container(
+                      
                       margin: EdgeInsets.only(
                           bottom: _w / 30, left: _w / 60, right: _w / 60),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        // color: Colors.black87,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         boxShadow: [
                           BoxShadow(
@@ -87,7 +89,7 @@ class GridView1 extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: "font5",
                               fontSize: 20,
-                              color: Color.fromARGB(255, 96, 34, 94),
+                               color: Color.fromARGB(255, 46, 98, 131),
                             ),
                           ),
                         ),

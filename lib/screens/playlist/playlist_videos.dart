@@ -38,6 +38,7 @@ class _PlaylistSongState extends State<PlaylistSong> {
                 itemBuilder: (BuildContext context, int index) {
 
                   PlaylistSongs? playSong = playSongs.getAt(index);
+                  
                   int surahno = index + 1;
 
                   if(playSong!.playListName == widget.playlistName){

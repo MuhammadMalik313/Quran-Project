@@ -14,6 +14,7 @@ class SettingsButton extends StatelessWidget {
         icon: Icon(
           Icons.settings,
           size: 35,
+          color: Colors.black,
         ));
   }
 }

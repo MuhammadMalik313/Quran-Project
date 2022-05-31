@@ -4,7 +4,7 @@ import 'package:quraanproject/model/data_model.dart';
 
 Future<void> addPlaylist(PlayListModel value) async {
   final values = playlistDB.values.toList();
-  var isExists = values.where((element) => element.name == value.name);
+  var isExists = values.where((element) => element.name == value.name);//if already added playlist exist then use the if case
   if (isExists.isEmpty) {
     await playlistDB.add(value);
 
@@ -19,12 +19,13 @@ Future<void> addPlaylist(PlayListModel value) async {
 
 
 
-Future<void> getAllPlaylistSongs() async {}
 deletePlaylist(String playSongId) async {
   final Map<dynamic, PlayListModel> deliveriesMap = playlistDB.toMap();
   dynamic desiredKey;
   deliveriesMap.forEach((key, value) {
-    if (value.name == playSongId) desiredKey = key;
+    if (value.name == playSongId){
+      desiredKey = key;
+    } 
   });
   playlistDB.delete(desiredKey);
 }
@@ -34,6 +35,7 @@ editPlaylist({
   required newValue,
   required index,
 }) async {
+  //change playlist name only
   final Map<dynamic, PlayListModel> deliveriesMap = playlistDB.toMap();
   dynamic desiredKey;
   deliveriesMap.forEach((key, value) {
@@ -42,6 +44,7 @@ editPlaylist({
   PlayListModel playModel = PlayListModel(name: newValue);
   playlistDB.put(desiredKey, playModel);
 
+  //change song playlist name
   final Map<dynamic, PlaylistSongs> playSongMap = playSongBox.toMap();
   playSongMap.forEach((key, value) {
     if (value.playListName == oldValue) desiredKey = key;

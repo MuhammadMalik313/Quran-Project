@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                                     _arabiccalender.longMonthName.toString(),
                                     style: const TextStyle(
                                         fontSize: 25,
-                                        color: Color.fromARGB(255, 109, 31, 140),
+                                        color: Color.fromARGB(255, 22, 20, 22),
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "font2"),
                                   ),
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                                       _arabiccalender.hDay.toString(),
                                       style: const TextStyle(
                                           fontSize: 25,
-                                          color: Color.fromARGB(255, 109, 31, 140),
+                                          color: Color.fromARGB(255, 22, 20, 22),
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "font2"),
                                     ),
