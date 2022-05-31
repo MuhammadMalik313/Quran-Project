@@ -94,9 +94,8 @@ class SlideAnimation4 extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (ctx) =>PlayAudio(index: surahno,)));
-                              // getAudio();
                         },
-                        // onTap:  ,
+                    
                       ),
                       margin: EdgeInsets.only(bottom: _w / 20),
                       height: _w / 5,

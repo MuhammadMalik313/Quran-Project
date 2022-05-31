@@ -84,15 +84,12 @@ class _FavouriteState extends State<Favourite> {
                                   builder: (ctx) => PlayAudio(
                                         index: favSong.favNo,
                                       )));
-                              // getAudio();
                             },
 
-                            // onTap:  ,
                           ),
                           margin: EdgeInsets.only(bottom: _w / 20),
                           height: _w / 5,
                           decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             boxShadow: [
                               BoxShadow(

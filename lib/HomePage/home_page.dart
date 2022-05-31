@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hijri/hijri_calendar.dart';
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
     var format = DateFormat.yMMMMd('en_US');
     var formatted = format.format(day);
     String tdata = DateFormat("hh:mm  a").format(DateTime.now());
+   
 
     return WillPopScope(
       onWillPop: () async{SystemChannels.platform.invokeMethod('SystemNavigator.pop');
@@ -78,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                                     _arabiccalender.longMonthName.toString(),
                                     style: const TextStyle(
                                         fontSize: 25,
-                                        color: Color.fromARGB(255, 22, 20, 22),
+                                        color: Color.fromARGB(255, 95, 94, 95),
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "font2"),
                                   ),
@@ -90,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                                       _arabiccalender.hDay.toString(),
                                       style: const TextStyle(
                                           fontSize: 25,
-                                          color: Color.fromARGB(255, 22, 20, 22),
+                                          color: Color.fromARGB(255, 76, 75, 76),
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "font2"),
                                     ),
@@ -104,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                                       style: const TextStyle(
                                           fontFamily: "font2",
                                           fontSize: 21,
-                                          color:  Color.fromARGB(255, 29, 4, 4)),
+                                          color:  Color.fromARGB(255, 76, 75, 76),)
                                     ),
                                   ),
                                 )
@@ -117,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                               formatted,
                               style: const TextStyle(
                                   fontSize: 20,
-                                  color: Color.fromARGB(255, 38, 5, 5),
+                                  color: Color.fromARGB(255, 76, 75, 76),
                                   fontFamily: "font2"),
                             ),
                             const SizedBox(
@@ -150,8 +152,8 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 const FavouritesButton(),
-                const SettingsButton()
-               
+                const SettingsButton(),
+                 
               ],
             ),
           ),

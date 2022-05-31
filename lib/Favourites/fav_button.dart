@@ -77,7 +77,6 @@ class _FavouriteButtonState extends State<FavouriteButton> {
               )
             : Icon(
                 Icons.favorite,
-                color: Color(0xffED3030),
               ),
       ),
     );
@@ -126,7 +125,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
               content: Container(
                   child: const Text(
                 ' Added to favourites',
-                style: TextStyle(color: Colors.white),
+                // style: TextStyle(color: Colors.white),
               )),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -137,7 +136,6 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
               content: Container(
                   child: const Text(
                 'Removed From Favourites',
-                style: TextStyle(color: Colors.white),
               )),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -157,7 +155,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
               )
             : Icon(
                 Icons.favorite,
-                color: Color.fromARGB(255, 228, 8, 78).withOpacity(1.0),
+                // color: Color.fromARGB(255, 115, 114, 114).withOpacity(1.0),
               ),
       ),
     );

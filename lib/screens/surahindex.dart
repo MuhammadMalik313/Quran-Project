@@ -57,27 +57,29 @@ class _QurancontentState extends State<Qurancontent> {
               height: 60.0,
               width: 60.0,
               child: FittedBox(
-                child: FloatingActionButton(
-                  //  backgroundColor: Colors.white,
-                  onPressed: () {
-                    getAudio();
-                  },
-                  child: Icon(
-                    playing == true
-                        ? Icons.play_circle_fill
-                        : Icons.pause_circle_filled,
-                    size: 55,
+                child: GestureDetector(
+                  child: FloatingActionButton(
+                     backgroundColor: Color.fromARGB(255, 14, 14, 14),
+                    onPressed: () {
+                      getAudio();
+                    },
+                    child: Icon(
+                      playing == true
+                          ? Icons.play_circle_fill_outlined
+                                  : Icons.pause_circle,
+                      size: 55,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
           appBar: AppBar(
-            //  backgroundColor: Color.fromARGB(255, 7, 1, 1),
               backgroundColor: Colors.black,
             automaticallyImplyLeading: false,
             elevation: 0,
-            toolbarHeight: 50,
+            toolbarHeight: 90,
             title: Column(
               children: [
                 Row(
@@ -111,31 +113,32 @@ class _QurancontentState extends State<Qurancontent> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                   image: AssetImage("assets/newhead4 (1).jpg",),
-                  fit: BoxFit.contain
+                  fit: BoxFit.fill
                 )),
               ),
             ),
           ),
           body: ListView(children: [
-            // Text("data"),
             Center(
                 child: Container(
               width: MediaQuery.of(context).size.width,
-              // color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.only(left: 70),
-                child: Text(
-                  quran.basmala,
-                  style: TextStyle(
-                    // color: Colors.black,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w800,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Text(
+                    quran.basmala,
+                    style: TextStyle(
+                      // color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
               ),
             )),
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(0),
               child: Container(
                 decoration: BoxDecoration(
                     // color: Colors.white,

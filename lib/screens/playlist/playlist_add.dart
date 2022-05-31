@@ -28,7 +28,6 @@ class _AddPlaylistState extends State<AddPlaylist> {
         body: Column(
           children: [
             Padding(
-              //#########################################
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
@@ -65,7 +64,6 @@ class _AddPlaylistState extends State<AddPlaylist> {
               ),
             ),
             Expanded(
-                //#########################################
                 child: ValueListenableBuilder(
                     valueListenable: playlistDB.listenable(),
                     builder: (BuildContext ctx, Box<PlayListModel> playlist,

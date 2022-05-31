@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quraanproject/model/data_model.dart';
 import 'package:quraanproject/screens/new_splash_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 late Box<PlaylistSongs> playSongBox;
 late Box<Favourites> favSongsBox;
@@ -25,8 +26,9 @@ Future main(List<String> args) async {
   runApp(MyApp());
 }
 
+
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<MyApp> createState() => _MyAppState();
   
@@ -35,18 +37,34 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
+     precacheImage( AssetImage('assets/34v1_ysvk_201215.jpg'),context);
     // TODO: implement initState
-    
-    precacheImage(AssetImage("assets/34v1_ysvk_201215.jpg"), context);
-    
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "THE HOLY QURAN",
-       
-       theme: ThemeData(brightness: Brightness.dark),
-        home:  SplashScreen1());
+     
+      home: AdaptiveTheme(
+        light: ThemeData(
+          brightness: Brightness.light,
+          primaryColor: Colors.black,
+          //  accentColor: Colors.amber,
+        ),
+        dark: ThemeData(
+          brightness: Brightness.dark,
+          primaryColor: Color.fromARGB(255, 253, 251, 251),
+          //  accentColor: Colors.amber,
+        ),
+        initial: AdaptiveThemeMode.light,
+        builder: (theme, darkTheme) => MaterialApp(
+          
+          theme: theme,
+          darkTheme: darkTheme,
+           debugShowCheckedModeBanner: false,
+          home: SplashScreen1(),
+        ),
+      ),
+    );
   }
 }

@@ -22,7 +22,6 @@ class _PlaylistState extends State<Playlist> {
           backgroundColor: Colors.black,
           title: Text("PLAYLIST"),
           actions: [
-            // IconButton(onPressed: () {}, icon: Icon(Icons.add)),
           ],
         ),
         body: Column(
@@ -51,8 +50,7 @@ class _PlaylistState extends State<Playlist> {
                       final _playlist1 = PlayListModel(name: _playlist);
                       addPlaylist(_playlist1);
                     },
-                    // icon: Icon(Icons.add),
-                    // label: Text("add"),
+                   
                     child: Text("ADD"),
                   )
                 ],

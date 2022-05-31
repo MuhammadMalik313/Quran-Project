@@ -48,7 +48,6 @@ class _ContactPageState extends State<ContactPage> {
             height: 400,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              // color: Color.fromARGB(255, 232, 241, 246),
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),

@@ -24,7 +24,6 @@ class PlayAudio extends StatefulWidget {
 }
 
 class _PlayAudioState extends State<PlayAudio> {
-  // var url = "https://server7.mp3quran.net/s_gmd/$count.mp3";
   AudioPlayer audioPlayer = AudioPlayer();
   dynamic totalDuration = "00:00";
   dynamic position1 = "00:00";
@@ -195,7 +194,6 @@ class _PlayAudioState extends State<PlayAudio> {
                                   size: 50,
                                 );
 
-                                // audioPlayer.pause();
                               },
                               icon: Icon(
                                 Icons.skip_previous_outlined,

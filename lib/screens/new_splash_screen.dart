@@ -45,7 +45,6 @@ alreadyUsed=prefs.getBool("alreadyUsed")?? false;
             fontSize: 35,
             fontWeight: FontWeight.bold,
             fontFamily: "font4",
-            // color: Color.fromARGB(255, 0, 7, 2)
           ),
         ),
       ],

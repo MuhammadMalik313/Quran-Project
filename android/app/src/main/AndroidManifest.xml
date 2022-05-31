@@ -1,10 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quraanproject">
 
-   
+   <uses-permission
+     android:name="android.permission.INTERNET"
+     android:maxSdkVersion="23" />
 
    <application
-        android:label="Zaynul Qur'an"
+        android:label="Noble Qur'an"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

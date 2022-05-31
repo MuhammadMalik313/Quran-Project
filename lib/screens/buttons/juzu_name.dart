@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quraanproject/screens/juzupage.dart';
-import 'package:quran/quran.dart' as quran;
 
 class JuzNameWidget extends StatefulWidget {
   @override
@@ -68,7 +66,6 @@ class GridView1 extends StatelessWidget {
                       margin: EdgeInsets.only(
                           bottom: _w / 30, left: _w / 60, right: _w / 60),
                       decoration: BoxDecoration(
-                        // color: Colors.black87,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         boxShadow: [
                           BoxShadow(
@@ -79,26 +76,30 @@ class GridView1 extends StatelessWidget {
                         ],
                       ),
                       child: Center(
-                        child: TextButton(
-                          onPressed: (){
-                              Navigator.of(context).push(MaterialPageRoute(
-                            builder: (ctx) => JuzuPage(juzno:juzno)));
-                          },
-                          child: Text(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ListTile(
+                            title: Text(
                             '   ${juzno.toString()}\nJUZ',
                             style: TextStyle(
                               fontFamily: "font5",
                               fontSize: 20,
-                               color: Color.fromARGB(255, 46, 98, 131),
                             ),
+                            
+                       
                           ),
-                        ),
+                         
+                          onTap: (){
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (ctx) => JuzuPage(juzno:juzno)));
+                          },
                       ),
+                        ),
                       
                     ),
                   ),
                 ),
-              );
+              ));
             },
           ),
         ),

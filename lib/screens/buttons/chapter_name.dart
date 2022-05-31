@@ -100,7 +100,6 @@ class SlideAnimation1 extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: _w / 20),
                     height: _w / 5,
                     decoration: BoxDecoration(
-                      // color: Colors.white,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),

@@ -72,9 +72,9 @@ class _PlaylistSongState extends State<PlaylistSong> {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (ctx) =>PlayAudio(index: playSong.chapterNo,)));
-                                  // getAudio();
+                                 
                             },
-                            // onTap:  ,
+                        
                           ),
                           margin: EdgeInsets.only(bottom: _w / 20),
                           height: _w / 5,
