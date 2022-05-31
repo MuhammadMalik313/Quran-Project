@@ -2,8 +2,8 @@
     package="com.example.quraanproject">
 
    <uses-permission
-     android:name="android.permission.INTERNET"
-     android:maxSdkVersion="23" />
+     android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+     android:maxSdkVersion="18" />
 
    <application
         android:label="Noble Qur'an"
