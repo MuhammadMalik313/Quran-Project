@@ -53,7 +53,7 @@ class _PlayAudioState extends State<PlayAudio> {
     initAudio();
     super.initState();
 
-    getAudio();
+     getAudio();
   }
 
   @override

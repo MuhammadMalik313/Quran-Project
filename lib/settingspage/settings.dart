@@ -33,7 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
           child: SingleChildScrollView(
               child: Column(children: [
             ListTile(
-                leading: Icon(Icons.sunny),
+                leading: Icon(Icons.wb_sunny_outlined),
                 title: Text("Dark Mode"),
                 trailing: Switch(
                     value: isSwitched,
@@ -56,7 +56,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             ListTile(
               leading: Icon(Icons.feedback_outlined),
-              title: Text("Feddback"),
+              title: Text("Feedback"),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: ((context) => ContactPage())));

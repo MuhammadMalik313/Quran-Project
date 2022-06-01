@@ -59,14 +59,14 @@ class _QurancontentState extends State<Qurancontent> {
               child: FittedBox(
                 child: GestureDetector(
                   child: FloatingActionButton(
-                     backgroundColor: Color.fromARGB(255, 14, 14, 14),
+                    backgroundColor: Color.fromARGB(255, 14, 14, 14),
                     onPressed: () {
                       getAudio();
                     },
                     child: Icon(
                       playing == true
                           ? Icons.play_circle_fill_outlined
-                                  : Icons.pause_circle,
+                          : Icons.pause_circle,
                       size: 55,
                       color: Colors.white,
                     ),
@@ -76,10 +76,10 @@ class _QurancontentState extends State<Qurancontent> {
             ),
           ),
           appBar: AppBar(
-              backgroundColor: Colors.black,
+            backgroundColor: Colors.black,
             automaticallyImplyLeading: false,
-            elevation: 0,
-            toolbarHeight: 90,
+            elevation: 3,
+            toolbarHeight: 70,
             title: Column(
               children: [
                 Row(
@@ -93,7 +93,7 @@ class _QurancontentState extends State<Qurancontent> {
                       'سورة ${quran.getSurahNameArabic(widget.surahno)}',
                       style: TextStyle(
                         // color: Color.fromARGB(255, 0, 6, 8),
-                        fontSize: 30,
+                        fontSize: 40,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -106,17 +106,7 @@ class _QurancontentState extends State<Qurancontent> {
               ],
             ),
             centerTitle: true,
-            flexibleSpace: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage("assets/newhead4 (1).jpg",),
-                  fit: BoxFit.fill
-                )),
-              ),
-            ),
+            flexibleSpace: Container(),
           ),
           body: ListView(children: [
             Center(
@@ -130,7 +120,7 @@ class _QurancontentState extends State<Qurancontent> {
                     quran.basmala,
                     style: TextStyle(
                       // color: Colors.black,
-                      fontSize: 30,
+                      fontSize: 28,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
