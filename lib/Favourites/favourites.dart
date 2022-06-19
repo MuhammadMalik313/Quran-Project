@@ -24,7 +24,7 @@ class _FavouriteState extends State<Favourite> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text("FAVOURITES"),
+        title: Text("Favorites",style: TextStyle(fontFamily: "font4", fontSize: 32),),
         centerTitle: true,
         brightness: Brightness.dark,
       ),

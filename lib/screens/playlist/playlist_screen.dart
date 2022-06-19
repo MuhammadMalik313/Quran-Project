@@ -19,8 +19,9 @@ class _PlaylistState extends State<Playlist> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.black,
-          title: Text("PLAYLIST"),
+          title: Text("Playlist", style: TextStyle(fontFamily: "font4", fontSize: 33),),
           actions: [
           ],
         ),
@@ -49,10 +50,23 @@ class _PlaylistState extends State<Playlist> {
                       print("$_playlist");
                       final _playlist1 = PlayListModel(name: _playlist);
                       addPlaylist(_playlist1);
+                      final snackBar = SnackBar(
+                        content: Container(
+                            child: const Text(
+                          'Added to playlist',
+                          // style: TextStyle(color: Colors.white),
+                        )),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
-                   
-                    child: Text("ADD"),
-                  )
+                    child: Text(
+                      "ADD",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.black),
+                    ),
+                  ),
                 ],
               ),
             ),

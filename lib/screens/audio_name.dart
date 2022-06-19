@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:quraanproject/Favourites/favourites.dart';
 import 'package:quraanproject/HomePage/home_page.dart';
 import 'package:quraanproject/screens/play_audio.dart';
 import 'package:quran/quran.dart' as quran;
@@ -53,7 +52,7 @@ class SlideAnimation4 extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
       backgroundColor: Colors.black,
-          title: Text("AUDIO INDEX"),
+          title: Text("Audio Index",style: TextStyle(fontFamily: "font4", fontSize: 30),),
           centerTitle: true,
           brightness: Brightness.dark,
            actions: [ IconButton(

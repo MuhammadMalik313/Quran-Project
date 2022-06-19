@@ -24,8 +24,8 @@ class _SettingsPageState extends State<SettingsPage> {
           backgroundColor: Colors.black,
           centerTitle: true,
           title: Text(
-            "SETTINGS",
-            style: TextStyle(fontFamily: "font4", fontSize: 30),
+            "Settings",
+            style: TextStyle(fontFamily: "font4", fontSize: 33),
           ),
         ),
         body: Padding(

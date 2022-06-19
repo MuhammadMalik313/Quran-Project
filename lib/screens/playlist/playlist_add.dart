@@ -22,8 +22,12 @@ class _AddPlaylistState extends State<AddPlaylist> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           centerTitle: true,
-          title: Text("PLAYLIST"),
+          title: Text(
+            "Playlist",
+            style: TextStyle(fontFamily: "font4", fontSize: 30),
+          ),
         ),
         body: Column(
           children: [
@@ -53,12 +57,18 @@ class _AddPlaylistState extends State<AddPlaylist> {
                         content: Container(
                             child: const Text(
                           'Added to playlist',
-                          style: TextStyle(color: Colors.white),
+                          // style: TextStyle(color: Colors.white),
                         )),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
-                    child: Text("ADD"),
+                    child: Text(
+                      "ADD",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.black),
+                    ),
                   ),
                 ],
               ),

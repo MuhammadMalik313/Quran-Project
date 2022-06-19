@@ -1,7 +1,9 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:quraanproject/screens/audio_name.dart';
 import 'package:quraanproject/HomePage/home_page.dart';
 import 'package:quraanproject/screens/playlist/playlist_add.dart';
@@ -24,6 +26,7 @@ class PlayAudio extends StatefulWidget {
 }
 
 class _PlayAudioState extends State<PlayAudio> {
+  AudioCache audioCache = AudioCache();
   AudioPlayer audioPlayer = AudioPlayer();
   dynamic totalDuration = "00:00";
   dynamic position1 = "00:00";
@@ -55,6 +58,19 @@ class _PlayAudioState extends State<PlayAudio> {
 
      getAudio();
   }
+  
+  Future loadFile() async {
+    final bytes = await readBytes(Uri.parse("https://server7.mp3quran.net/s_gmd/$count.mp3"));
+     var dir;
+     final file = File('${dir.path}/audio.mp3');
+
+    await file.writeAsBytes(bytes);
+    if (file.existsSync()) {
+      String localFilePath;
+      setState(() => localFilePath = file.path);
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +98,8 @@ class _PlayAudioState extends State<PlayAudio> {
               icon: Icon(Icons.arrow_back_rounded)),
           centerTitle: true,
           title: Text(
-            "PLAY AUDIO",
-            style: TextStyle(fontFamily: "font4", fontSize: 30),
-          ),
+            "Play Audio",
+style: TextStyle(fontFamily: "font4", fontSize: 30),          ),
         ),
         body: Container(
           height: MediaQuery.of(context).size.height,
@@ -206,7 +221,9 @@ class _PlayAudioState extends State<PlayAudio> {
                         InkWell(
                           splashColor: Colors.grey,
                           onTap: () {
+                            
                             getAudio();
+                            
                           },
                           child: Icon(
                             playing == true
@@ -321,4 +338,7 @@ class _PlayAudioState extends State<PlayAudio> {
       });
     });
   }
+   
 }
+  
+

@@ -14,7 +14,7 @@ class JuzuPage extends StatelessWidget {
       backgroundColor: Colors.black,
       elevation: 0,
       centerTitle: true,
-     title: Text('JUZU $juzno',style: TextStyle(fontSize: 27, fontFamily: "font3"),),
+     title: Text('Juzu $juzno',style: TextStyle(fontFamily: "font4", fontSize: 30),),
    
   ),
   body: SfPdfViewer.network(

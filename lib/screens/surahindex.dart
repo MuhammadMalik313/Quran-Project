@@ -52,10 +52,10 @@ class _QurancontentState extends State<Qurancontent> {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.startDocked,
           floatingActionButton: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(bottom: 30),
             child: Container(
-              height: 60.0,
-              width: 60.0,
+              height: 50.0,
+              width: 50.0,
               child: FittedBox(
                 child: GestureDetector(
                   child: FloatingActionButton(
@@ -67,7 +67,7 @@ class _QurancontentState extends State<Qurancontent> {
                       playing == true
                           ? Icons.play_circle_fill_outlined
                           : Icons.pause_circle,
-                      size: 55,
+                      size: 56,
                       color: Colors.white,
                     ),
                   ),
@@ -147,7 +147,7 @@ class _QurancontentState extends State<Qurancontent> {
                                 verseEndSymbol: true),
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w800),
+                                fontSize: 27, fontWeight: FontWeight.w600),
                           ),
                         ),
                         Image.asset(

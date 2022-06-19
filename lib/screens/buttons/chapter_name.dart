@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quraanproject/screens/surahindex.dart';
 import 'package:quran/quran.dart' as quran;
-import 'package:quran/surah_data.dart';
+
 class ChapterButton extends StatefulWidget {
   const ChapterButton({Key? key}) : super(key: key);
 
@@ -41,15 +41,14 @@ class SlideAnimation1 extends StatelessWidget {
     double _w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        actions: [
-          IconButton(
-              onPressed: () {
-                showSearch(context: context, delegate: Mysearch());
-              },
-              icon: const Icon(Icons.search))
-        ],
-        
+          backgroundColor: Colors.black,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showSearch(context: context, delegate: Mysearch());
+                },
+                icon: const Icon(Icons.search))
+          ],
           title: Text(
             "Surah Index",
             style: TextStyle(fontFamily: "font4", fontSize: 30),
@@ -78,7 +77,6 @@ class SlideAnimation1 extends StatelessWidget {
                   flipAxis: FlipAxis.y,
                   child: Container(
                     child: ListTile(
-                      
                       title: Text(
                         quran.getSurahName(surahno),
                         style: TextStyle(
@@ -121,6 +119,7 @@ class SlideAnimation1 extends StatelessWidget {
     );
   }
 }
+
 class Mysearch extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -152,44 +151,35 @@ class Mysearch extends SearchDelegate {
       child: Text(query),
     );
   }
-  var quranList=[];
-  
-    
-  
+
+  var quranList = [];
+
   @override
   Widget buildSuggestions(BuildContext context) {
     quranList.clear();
-    for(var i=1;i<=114;i++){
+    for (var i = 1; i <= 114; i++) {
       quranList.add(quran.getSurahName(i));
-      
-      
     }
     final List listItems;
     if (query.isEmpty) {
       listItems = quranList;
     } else {
       listItems = quranList
-            .where((element) => element
-                .toLowerCase()
-                .contains(query.toLowerCase().toString()))
-            .toList();
-
+          .where((element) =>
+              element.toLowerCase().contains(query.toLowerCase().toString()))
+          .toList();
     }
-           
 
     return listItems.isEmpty
         ? const Center(child: Text("No Data Found!"))
         : ListView.builder(
             itemCount: listItems.length,
             itemBuilder: (context, index) {
-              
-
               return Padding(
-                  padding: const EdgeInsets.only(left: 15.00, right: 15.00),
-                  child: Column(
-                    children: [
-                     ListTile(
-                      
+                padding: const EdgeInsets.only(left: 15.00, right: 15.00),
+                child: Column(
+                  children: [
+                    ListTile(
                       title: Text(
                         listItems[index],
                         style: TextStyle(
@@ -197,15 +187,16 @@ class Mysearch extends SearchDelegate {
                           fontFamily: "font3",
                         ),
                       ),
-                     
-                      onTap: () {  var i=quranList.indexOf(listItems[index])+1;
+                      onTap: () {
+                        var i = quranList.indexOf(listItems[index]) + 1;
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (ctx) => Qurancontent(surahno: i)));
                       },
                     ),
-                      
-                    ],
-                  ));
-            });
+                  ],
+                ),
+              );
+            },
+          );
   }
 }

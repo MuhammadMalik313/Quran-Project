@@ -44,32 +44,30 @@ class _HomePageState extends State<HomePage> {
     String tdata = DateFormat("hh:mm  a").format(DateTime.now());
    
 
-    return WillPopScope(
-      onWillPop: () async{SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-      return true;
-      },
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          body: SingleChildScrollView(
-            child: Column(
-              
-              children: [
-                Stack(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            
+            children: [
+              Stack(
 
-                  
-                  children: [
-                    Container(
-                      height: _size.height * 0.50,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(
-                          image: const DecorationImage(
-                        image: AssetImage("assets/34v1_ysvk_201215.jpg",),
-                        
-                        
-                      )),
+                
+                children: [
+                  Container(
+                    height: _size.height * 0.55,
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                        image: const DecorationImage(
+                      image: AssetImage("assets/Screenshot 2022-04-14 110705.jpg",),
+                      
+                      
+                    )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Padding(
-                        padding: const EdgeInsets.all(20),
+                        padding: const EdgeInsets.only(top: 25,right: 25),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -79,9 +77,10 @@ class _HomePageState extends State<HomePage> {
                                     child: Padding(
                                   padding: const EdgeInsets.only(left: 50),
                                   child: Text(
+                                    
                                     _arabiccalender.longMonthName.toString(),
                                     style: const TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 30,
                                         color: Color.fromARGB(255, 95, 94, 95),
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "font2"),
@@ -89,20 +88,21 @@ class _HomePageState extends State<HomePage> {
                                 )),
                                 WidgetSpan(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(left: 5),
+                                    padding: const EdgeInsets.only(left: 5,),
                                     child: Text(
                                       _arabiccalender.hDay.toString(),
                                       style: const TextStyle(
-                                          fontSize: 25,
+                                          fontSize: 30,
                                           color: Color.fromARGB(255, 76, 75, 76),
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "font2"),
                                     ),
                                   ),
                                 ),
+                        
                                 WidgetSpan(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(left: 5),
+                                    padding: const EdgeInsets.only(left: 1,bottom: 5),
                                     child: Text(
                                       "${_arabiccalender.hYear} AH",
                                       style: const TextStyle(
@@ -117,47 +117,56 @@ class _HomePageState extends State<HomePage> {
                             const SizedBox(
                               height: 10,
                             ),
-                            Text(
-                              formatted,
-                              style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Color.fromARGB(255, 76, 75, 76),
-                                  fontFamily: "font2"),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 25),
+                                child: Text(
+                                  formatted,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 76, 75, 76),
+                                      fontFamily: "font2"),
+                                ),
+                              ),
                             ),
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              tdata,
-                              style: const TextStyle(
-                                  fontSize: 20,
-                                  color:  Color.fromARGB(255, 53, 7, 7),
-                                  fontFamily: "font2"),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 35),
+                              child: Text(
+                                tdata,
+                                style: const TextStyle(
+                                    fontSize: 25,
+                                    color:  Color.fromARGB(255, 53, 7, 7),
+                                    fontFamily: "font2"),
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                  ],
-                ),
-              
-                const ChapterButton(),
-                const SizedBox(
-                  height: 20,
-                ),
-                JuzNameWidget(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const AudioName(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const FavouritesButton(),
-                const SettingsButton(),
-                 
-              ],
-            ),
+                  ),
+                ],
+              ),
+            
+              const ChapterButton(),
+              const SizedBox(
+                height: 20,
+              ),
+              JuzNameWidget(),
+              const SizedBox(
+                height: 20,
+              ),
+              const AudioName(),
+              const SizedBox(
+                height: 20,
+              ),
+              const FavouritesButton(),
+              const SettingsButton(),
+               
+            ],
           ),
         ),
       ),

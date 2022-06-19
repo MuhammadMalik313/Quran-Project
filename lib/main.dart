@@ -9,7 +9,7 @@ late Box<PlaylistSongs> playSongBox;
 late Box<Favourites> favSongsBox;
 late Box<PlayListModel> playlistDB;
 
-Future main(List<String> args) async {
+Future main() async {
   
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
@@ -37,7 +37,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-     precacheImage( AssetImage('assets/34v1_ysvk_201215.jpg'),context);
+     precacheImage( AssetImage('assets/giScreenshot 2022-04-14 110705.jpg'),context);
     // TODO: implement initState
     super.initState();
   }
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
           darkTheme: darkTheme,
            debugShowCheckedModeBanner: false,
           home: SplashScreen1(),
-        ),
+        )
       ),
     );
   }

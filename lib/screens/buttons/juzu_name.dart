@@ -40,7 +40,7 @@ class GridView1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 0,
-          title: Text("JUZ INDEX"),
+          title: Text("Juz Index",style: TextStyle(fontFamily: "font4", fontSize: 32),),
           centerTitle: true,
           brightness: Brightness.dark),
       body: AnimationLimiter(

@@ -28,7 +28,6 @@ class PolicyDialog extends StatelessWidget {
                 if (snapshot.hasData) {
                   return Markdown(
                       data: snapshot.data.toString(),
-                    // data: snapshot.data,
                   );
                 }
                 return Center(
